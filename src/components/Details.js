@@ -214,12 +214,13 @@ const DetailedRecipe = (props) => {
   // 34ac49879bd04719b7a984caaa4006b4
   // cab4f23fedc5483484839ad530349410
   //3caae40ae50049898c7b760b2fcddf72
+  //55f312a137d04d81a13f1614a6ed3113
 
   const { id } = useSelector((state) => state.details);
 
   const info = {
     apiURL: `https://api.spoonacular.com/recipes/${id}/information`,
-    apiKey: "cab4f23fedc5483484839ad530349410",
+    apiKey: "55f312a137d04d81a13f1614a6ed3113",
     apiURL2: `https://api.spoonacular.com/recipes/${id}/analyzedInstructions`,
   };
 
