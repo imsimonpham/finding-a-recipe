@@ -1,0 +1,42 @@
+.carousel {
+  height: 100%;
+}
+
+.carousel a {
+  color: #189a9d;
+  font-weight: 700;
+}
+
+.rec-carousel {
+  height: 100% !important;
+}
+
+.rec-slider {
+  height: 100% !important;
+}
+
+.rec-item-wrapper {
+  height: 100% !important;
+}
+
+.rec-dot_active {
+  background: #189a9d !important;
+  box-shadow: 0 0 1px 3px #189a9d !important;
+}
+
+.rec-arrow {
+  background-color: #189a9d !important;
+  color: white !important;
+}
+
+.rec-arrow:hover {
+  background-color: #f3e8cb !important;
+  color: black !important;
+}
+
+@media screen and (max-width: 500px) {
+  .rec-dot {
+    width: 6px !important;
+    height: 6px !important;
+  }
+}

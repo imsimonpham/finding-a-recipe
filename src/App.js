@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Navbar from "./components/Navbar";
+import GlobalStyles from "./GlobalStyles";
+import Footer from "./components/Footer";
+import React, { useState, useEffect } from "react";
+import Home from "./pages/Home";
+import RecipeDetails from "./pages/RecipeDetails";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-function App() {
+function App(props) {
+  const [value, setValue] = useState("");
+  useEffect(() => {}, [value]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyles />
+      <Navbar setValue={setValue} />
+
+      <Router>
+        <Switch>
+          <Route
+            path="/"
+            exact
+            component={() => <Home value={value} setValue={setValue} />}
+          />
+
+          <Route path="/RecipeDetails" component={() => <RecipeDetails />} />
+        </Switch>
+      </Router>
+
+      <Footer />
+    </>
   );
 }
 
