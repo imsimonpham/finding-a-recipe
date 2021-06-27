@@ -125,7 +125,7 @@ const InfoContainer = styled.div`
 
 const FoodIconsContainer = css`
   width: 100%;
-  height: 60px;
+  height: 80px;
   margin-bottom: 1rem;
   display: flex;
   justify-content: flex-start;
@@ -140,7 +140,11 @@ const FoodIconsContainer = css`
 
   @media screen and (max-width: 480px) {
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-top: 1rem;
+    small {
+      text-align: center;
+    }
     img {
       margin: 0;
     }
