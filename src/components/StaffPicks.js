@@ -133,11 +133,11 @@ const StaffPicks = (props) => {
         />
 
         <h1>6 Random Picks For You </h1>
-        {/* <GalleryWrapper>
+        <GalleryWrapper>
           {randomError && <div>{randomError}</div>}
           {randomIsLoading && <div>Loading...</div>}
           {randomData && <DishCard data={randomData} />}
-        </GalleryWrapper> */}
+        </GalleryWrapper>
       </Container>
     </Section>
   );
