@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled, { css } from "styled-components/macro";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../images/logo/logo1.png";
 import { BsSearch } from "react-icons/bs";
 import { ImFacebook, ImTwitter } from "react-icons/im";
@@ -125,6 +125,12 @@ const Pinterest = styled(FaPinterestP)``;
 
 const Navbar = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchBox, setSearchBox] = useState(false);
+
+  //hide search box for detail recipe page
+  const location = useLocation();
+  // console.log(location);
+
   const initiateSearch = (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
