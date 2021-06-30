@@ -60,14 +60,14 @@ const StaffPicks = (props) => {
     `${info.apiURL2}?apiKey=${info.apiKey}&ingredients=${info.ingredient}&number=${info.amountInfo}`
   );
 
-  //random picks
-  // const {
-  //   data: randomData,
-  //   error: randomError,
-  //   isLoading: randomIsLoading,
-  // } = useFetch(
-  //   `${info.apiURL}?apiKey=${info.apiKey}&number=${info.amountRandom}`
-  // );
+  // random picks
+  const {
+    data: randomData,
+    error: randomError,
+    isLoading: randomIsLoading,
+  } = useFetch(
+    `${info.apiURL}?apiKey=${info.apiKey}&number=${info.amountRandom}`
+  );
 
   // pagination;
   const [copyData, setCopyData] = useState([]);
