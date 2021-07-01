@@ -7,6 +7,7 @@ import { ImFacebook, ImTwitter } from "react-icons/im";
 import { FiInstagram } from "react-icons/fi";
 import { FaPinterestP } from "react-icons/fa";
 import { Colors } from "../data/Variables";
+import { IoIosArrowDropleftCircle } from "react-icons/io";
 
 const Nav = styled.nav`
   background: ${Colors.white};
@@ -36,7 +37,7 @@ const Container = styled.div`
   padding: 0 1rem;
 
   div {
-    flex-basis: 30%;
+    flex-basis: 25%;
   }
 
   form {
@@ -122,6 +123,15 @@ const Facebook = styled(ImFacebook)``;
 const Twitter = styled(ImTwitter)``;
 const Instagram = styled(FiInstagram)``;
 const Pinterest = styled(FaPinterestP)``;
+const BackArrow = styled(IoIosArrowDropleftCircle)`
+  color: ${Colors.primary};
+  font-size: 2rem;
+`;
+
+const ArrowContainer = styled.div`
+  /* border: 1px solid blue; */
+  width: 200px;
+`;
 
 const Navbar = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -129,7 +139,9 @@ const Navbar = (props) => {
 
   //hide search box for detail recipe page
   const location = useLocation();
-  // console.log(location);
+  if (location.pathname === "/RecipeDetails") {
+    console.log(location);
+  }
 
   const initiateSearch = (e) => {
     if (e.key === "Enter") {
@@ -155,20 +167,30 @@ const Navbar = (props) => {
   return (
     <Nav>
       <Container>
-        <SearchBox>
-          <InputContainer>
-            <input
-              type="text"
-              placeholder="Find a recipe"
-              value={searchTerm}
-              onChange={(e) => {
-                setSearchTerm(e.target.value);
-              }}
-              onKeyPress={initiateSearch}
-            />
-            <SearchIcon onClick={initiateSearchByClick} />
-          </InputContainer>
-        </SearchBox>
+        {location.pathname !== "/RecipeDetails" ? (
+          <SearchBox>
+            <InputContainer>
+              <input
+                type="text"
+                placeholder="Find a recipe"
+                value={searchTerm}
+                onChange={(e) => {
+                  setSearchTerm(e.target.value);
+                }}
+                onKeyPress={initiateSearch}
+              />
+              <SearchIcon onClick={initiateSearchByClick} />
+            </InputContainer>
+          </SearchBox>
+        ) : (
+          <Link to="/">
+            <ArrowContainer className="oneThird">
+              {" "}
+              <BackArrow />
+            </ArrowContainer>
+          </Link>
+        )}
+
         <Link to="/" onClick={refreshPage}>
           <Logo src={logo} alt="logo" />
         </Link>

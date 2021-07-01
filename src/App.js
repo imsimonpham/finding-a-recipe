@@ -16,17 +16,19 @@ function App(props) {
       <GlobalStyles />
       <Navbar setValue={setValue} />
 
-      <Router>
-        <Switch>
-          <Route
-            path="/"
-            exact
-            component={() => <Home value={value} setValue={setValue} />}
-          />
+      <Switch>
+        <Route
+          path="/"
+          exact
+          component={() => <Home value={value} setValue={setValue} />}
+        />
 
-          <Route path="/RecipeDetails" component={() => <RecipeDetails />} />
-        </Switch>
-      </Router>
+        <Route
+          path="/RecipeDetails"
+          exact
+          component={() => <RecipeDetails />}
+        />
+      </Switch>
 
       <Footer />
     </>
