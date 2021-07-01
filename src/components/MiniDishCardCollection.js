@@ -134,11 +134,7 @@ const MiniDishCard = (props) => {
                   );
                 })}
               </IngredientsWrapper>
-              <DetailsBtn
-                to="/RecipeDetails"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
+              <DetailsBtn to="/RecipeDetails" rel="noopener noreferrer">
                 View Recipe Details
               </DetailsBtn>
             </TextWrapper>
